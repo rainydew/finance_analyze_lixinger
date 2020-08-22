@@ -5,16 +5,16 @@ import json
 from easygui import msgbox
 
 stocks = {}
-token = input("请输入token")
+token = input("请输入token ")
+start_year = input("请输入起始年份(如2014) ")
+end_year = input("请输入结束年份(如2019，理杏仁限制10年区间) ")
 while True:
-    code = input("请输入股票代码，如果要结束输入，请直接回车")
+    code = input("请输入股票代码，如果要结束输入，请直接回车 ")
     if not code:
         break
-    name = input(f"请输入代码{code}对应的股票名称")
+    name = input(f"请输入代码{code}对应的股票名称 ")
     stocks[code] = name
 
-start_year = "2014"
-end_year = "2019"
 csv_file = ""
 csv_list = []
 parse_dict = {'ps.toi': '营业总收入', 'ps.oi': '营业收入', 'ps.oc': '营业成本', 'ps.tas': '税金及附加', 'ps.se': '销售费用', 'ps.ae': '管理费用', 'ps.rade': '研发费用', 'ps.fe': '财务费用', 'ps.oic': '其他收益', 'ps.ivi': '投资收益', 'ps.ciofv': '公允价值变动收益', 'ps.cilor': '信用减值损失', 'ps.ailor': '资产减值损失', 'ps.adi': '资产处置收益', 'ps.noi': '营业外收入', 'ps.tp': '利润总额', 'ps.np_s_r': '净利润率', 'bs.ta': '资产合计', 'bs.fa': '固定资产', 'bs.cip': '在建工程', 'bs.lwi_ta_r': '有息负债率', 'bs.tl_ta_r': '资产负债率', 'bs.tncl': '非流动负债合计', 'bs.toe': '股东权益合计', 'cfs.crfscapls': '销售商品、提供劳务收到的现金', 'cfs.ncffoa': '经营活动产生的现金流量净额', 'cfs.ncffia': '投资活动产生的现金流量净额', 'cfs.ncfffa': '筹资活动产生的现金流量净额', 'm.ta_to': '资产周转率', 'm.gp_r': '毛利率(GM)', 'm.i_ds': '存货周转天数', 'm.ar_ds': '应收账款周转天数', 'm.c_r': '流动比率', 'm.q_r': '速动比率'}
